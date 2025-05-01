@@ -261,8 +261,6 @@ limit 1;
 
 ![Screenshot 2025-04-29 201753](https://github.com/user-attachments/assets/65e17ef4-00ce-4ac3-bfbd-1a8856145e13)
 
-![Screenshot 2025-04-29 201906](https://github.com/user-attachments/assets/66b0a17d-8db6-4627-8d7b-6128b415eb75)
-
 
 ## RESULT
 Thus, the SQL queries to implement aggregate functions, GROUP BY, and HAVING clause have been executed successfully.
