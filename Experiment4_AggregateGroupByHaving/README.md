@@ -38,123 +38,230 @@ HAVING condition;
 
 **Question 1**
 --
--- Paste Question 1 here
+-- How many patients have expired insurance coverage for each insurance company?
 
 ```sql
--- Paste your SQL code below for Question 1
+--select InsuranceCompany,
+    count (*) as  TotalExpiredPatients
+from Insurance
+group by InsuranceCompany;
 ```
 
 **Output:**
 
-![Output1](output.png)
+![Screenshot 2025-04-29 200950](https://github.com/user-attachments/assets/fa231780-95c9-4fe6-a703-113869b83a02)
+
 
 **Question 2**
 ---
--- Paste Question 2 here
+-- Write a SQL query to calculate total available amount of fruits that has a price greater than 0.5 . Return total Count. 
+
+Note: Inventory attribute contains amount of fruits
+
+Table: fruits
+
+name        type
+----------  ----------
+id          INTEGER
+name        TEXT
+unit        TEXT
+inventory   INTEGER
+price       REAL
 
 ```sql
--- Paste your SQL code below for Question 2
+-- select sum(inventory) as total_available_amount from fruits
+where price>0.5;
 ```
 
 **Output:**
 
-![Output2](output.png)
+![Screenshot 2025-04-29 201049](https://github.com/user-attachments/assets/6405cb15-1ad4-4928-9df8-53665693f5d2)
+
 
 **Question 3**
 ---
--- Paste Question 3 here
+--Write a SQL query to find the customer with longest name?
+
+Table: customer
+
+name        type
+----------  ----------
+id          INTEGER
+name        TEXT
+city        TEXT
+email       TEXT
+phone       INTEGER
 
 ```sql
--- Paste your SQL code below for Question 3
+-- select name,length(name) as length
+from customer
+order by length(name) desc
+limit 1;
 ```
 
 **Output:**
 
-![Output3](output.png)
+![Screenshot 2025-04-29 201141](https://github.com/user-attachments/assets/0b36cce1-b74d-4eb6-9bb4-9aada145b1d4)
+
 
 **Question 4**
 ---
--- Paste Question 4 here
+-- Write a SQL query to find the average length of names for people living in Chennai?
+
+Table: customer
+
+name        type
+----------  ----------
+id          INTEGER
+name        TEXT   
+city        TEXT
+email       TEXT
+phone       INTEGER
 
 ```sql
--- Paste your SQL code below for Question 4
+-- select avg(length(name)) as avg_name_length
+from customer
+where city='Chennai';
 ```
 
 **Output:**
 
-![Output4](output.png)
+![Screenshot 2025-04-29 201227](https://github.com/user-attachments/assets/ea03556c-8719-41ee-96ad-b4d432e2106a)
+
 
 **Question 5**
 ---
--- Paste Question 5 here
+-- Write a SQL query to calculate total purchase amount of all orders. Return total purchase amount.
+
+Sample table: orders
+
+ord_no      purch_amt   ord_date    customer_id  salesman_id
+
+----------  ----------  ----------  -----------  -----------
+
+70001       150.5       2012-10-05  3005         5002
+
+70009       270.65      2012-09-10  3001         5005
+
+70002       65.26       2012-10-05  3002         5001
 
 ```sql
--- Paste your SQL code below for Question 5
+-- select sum(purch_amt) as TOTAL
+from orders;
 ```
 
 **Output:**
 
-![Output5](output.png)
+![Screenshot 2025-04-29 201310](https://github.com/user-attachments/assets/7ccbf643-66e9-4cb3-80d1-6ba0b5f609bc)
+
 
 **Question 6**
 ---
--- Paste Question 6 here
+-- Which cities (addresses) in the "customer1" table have an average salary lesser than Rs. 15000
 
 ```sql
--- Paste your SQL code below for Question 6
+-- select address,avg(salary) as 'AVG(salary)' 
+from customer1
+group by address
+having avg(salary)<15000;
 ```
 
 **Output:**
 
-![Output6](output.png)
+![Screenshot 2025-04-29 201402](https://github.com/user-attachments/assets/e027e3a5-0e8c-4fe9-ad0e-4bee98ec0042)
+
 
 **Question 7**
 ---
--- Paste Question 7 here
+-- Write a SQL Query to find how many medications are prescribed for each patient?
 
 ```sql
--- Paste your SQL code below for Question 7
+-- select PatientID,
+       count(Medications) as AvgMedications
+from  MedicalRecords      
+
+group by PatientID; 
+       
+       
 ```
 
 **Output:**
 
-![Output7](output.png)
+![Screenshot 2025-04-29 201511](https://github.com/user-attachments/assets/356df034-f74b-4006-801d-efa7c3318998)
+
 
 **Question 8**
 ---
--- Paste Question 8 here
+-- Write a SQL query to find the total number of unique cities in the customer table?
+
+Table: customer
+
+name        type
+----------  ----------
+id          INTEGER
+name        TEXT
+city        TEXT
+email       TEXT
+phone       INTEGER
 
 ```sql
--- Paste your SQL code below for Question 8
+-- select count(distinct(city)) as unique_cities from customer;
 ```
 
 **Output:**
 
-![Output8](output.png)
+![Screenshot 2025-04-29 201604](https://github.com/user-attachments/assets/bd01ac13-b36e-4540-9b20-5289325f45ca)
+
 
 **Question 9**
 ---
--- Paste Question 9 here
+-- Write a SQL query to find the total income of employees aged 40 or above.
+
+Table: employee
+
+name        type
+----------  ----------
+id          INTEGER
+name        TEXT
+age         INTEGER
+city        TEXT
+income      INTEGER
 
 ```sql
--- Paste your SQL code below for Question 9
+-- select sum(income) as total_income from employee
+where age>=40;
 ```
 
 **Output:**
 
-![Output9](output.png)
+![Screenshot 2025-04-29 201705](https://github.com/user-attachments/assets/d9a7c58f-428f-4194-8809-78f6ffae9b7e)
+
 
 **Question 10**
 ---
--- Paste Question 10 here
+-- Write a SQL query to find the youngest employee in the company?
+
+Table: employee
+
+name        type
+----------  ----------
+id          INTEGER
+name        TEXT
+age         INTEGER
+city        TEXT
+income      INTEGER
 
 ```sql
--- Paste your SQL code below for Question 10
+-- select name as Employee_Name,age as Age from employee 
+order by age asc
+limit 1;
 ```
 
 **Output:**
 
-![Output10](output.png)
+![Screenshot 2025-04-29 201753](https://github.com/user-attachments/assets/65e17ef4-00ce-4ac3-bfbd-1a8856145e13)
+
+![Screenshot 2025-04-29 201906](https://github.com/user-attachments/assets/66b0a17d-8db6-4627-8d7b-6128b415eb75)
 
 
 ## RESULT
