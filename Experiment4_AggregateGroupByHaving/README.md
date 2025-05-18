@@ -1,4 +1,4 @@
-# Experiment 4: Aggregate Functions, Group By and Having Clause
+# Experiment  4: Aggregate Functions, Group By and Having Clause
 
 ## AIM
 To study and implement aggregate functions, GROUP BY, and HAVING clause with suitable examples.
